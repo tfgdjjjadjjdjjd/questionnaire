@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="/static/dist/js/jquery-3.1.1.js"></script>
+    <script src="/static/dist/js/bootstrap.js"></script>
+    <link rel="stylesheet" href="/static/dist/css/bootstrap.css">
+    <style>
+        .questone {
+            width: 950px;
+            background-color: gainsboro;
+            height: 150px;
+            padding-top: 5px    ;
+            margin-top: 20px;
+        }
+        .img{
+            width: 180px;
+            height: 180px;
+        }
+    </style>
+</head>
+<body>
+<h1 style="color: #79CDCD;font-family: 幼圆">编辑问卷题目</h1>
+<div class="container">
+    <div class="row">
+        <div class="col-md-2">
+            <img class="img" src="http://qq.5068.com/uploads/allimg/130306/1129453627-10.jpg" alt="">
+        </div>
+        <div class="col-md-10">
+            <div class="">
+                <p>
+                    <a href="">
+                        <button class="btn btn-success">添加</button>
+                    </a>
+                    <a href="">
+                        <button class="btn btn-info">保存</button>
+                    </a>
+                </p>
+            </div>
+        {% for question in question_list %}
+            <div class="questone">
+                <div style="color: #f7e1b5;font-size: 25px">问题1</div>
+                <div style="height: 40px">
+                    <span style="color: #c7254e">问题：</span>
+                    <textarea rows="1" cols="90">
+                    {{ question.caption }}
+                     </textarea>
+                </div>
+                <div style="height: 40px">
+                <span style="color: #2aabd2">类型：</span>
+                    <select id="aa">
+                        {% for question in question.question_types %}
+                            <option value="{{ question.0 }}">{{ question.1 }}</option>
+                        {% endfor %}
+                    </select>
+                {% endfor %}
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+<script>
+
+
+     $('#aa').change(function () {
+            $(this).on()
+        })
+
+
+</script>
+
+
+
+
+</body>
+</html>

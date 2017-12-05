@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+      <link rel="stylesheet" href="/static/dist/css/bootstrap.css">
+    <style>
+        .img{
+            width: 280px;
+            height:230px;
+        }
+    </style>
+</head>
+<body>
+<div style="padding-left: 60px">
+    <h2>欢迎来到信息列表</h2>
+</div>
+<div class="container">
+    <div class="row">
+        <div class="col-md-3" style="font-family: 幼圆;font-size: 25px">
+            <img class="img" src="http://www.16sucai.com/uploadfile/2013/0821/20130821092408546.jpg" alt="">
+        </div>
+        <div class="col-md-8">
+            <table class="table table-striped" border="1">
+                <tr style="color: #5bc0de">
+
+                    <th>调查问卷名称</th>
+                    <th>问卷调查班级</th>
+                    <th>参与人数</th>
+                    <th>问卷选项</th>
+                    <th>调查地址</th>
+                    <th>查看评分</th>
+                    <th>操作</th>
+                </tr>
+
+                {% for questionnaire in questionnaire_list %}
+                    <tr style="color: #5bc0de">
+                        <td>{{ questionnaire.title }}</td>
+                        <td>{{ questionnaire.classlist.name }}</td>
+                        <td>1/2</td>
+                        <td><a href="/quest/">编辑问卷</a></td>
+                        <td>/student/evaluste/</td>
+                        <td><a href="">查看评分</a></td>
+                        <td><button class="btn btn-danger">删除</button></td>
+                    </tr>
+                {% endfor %}
+
+
+            </table>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

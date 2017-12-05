@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="/static/dist/js/jquery-3.1.1.js"></script>
+    <script src="/static/dist/js/bootstrap.js"></script>
+
+    <link rel="stylesheet" href="/static/dist/css/bootstrap.css">
+
+    <link rel="stylesheet" href="/static/css/login.css">
+</head>
+<body>
+
+<div class="container">
+
+    <div class="row">
+        <div class="col-md-4 col-md-offset-4">
+            <form><h1>欢迎您进入登陆页面</h1>
+                {% csrf_token %}
+                <div class="form-group">
+                    <label for="username">用户名</label>
+                    <input type="text" class="form-control" id="username" placeholder="用户名">
+                </div>
+                <div class="form-group">
+                    <label for="password">密码</label>
+                    <input type="password" class="form-control" id="password" placeholder="密码">
+                </div>
+
+                <div class="row">
+                    <div class="col-md-6">
+
+                      <p> <input type="button" value="登录" class="btn btn-primary btn-block " id="sub"><span class="error"></span> </p>
+                    </div>
+                    <div class="col-md-6">
+                        <a href="//"><input type="button" value="注册" class="btn btn-success btn-block " id="regbtn"></a>
+                    </div>
+                </div>
+
+            </form>
+        </div>
+    </div>
+</div>
+</body>
+</html>
